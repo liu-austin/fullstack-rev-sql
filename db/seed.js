@@ -5,6 +5,7 @@
 // Fill in the definition of insertMockData so that when 
 // this file is run in the terminal with `node seed.js`, 
 // all 10 products are inserted into the database
+const dbHelpers = require('./dbhelpers');
 
 const adjectives = ['Used', 'New', 'Refurbished', "PARTS ONLY"];
 const brand = ['Sonny', 'Ninetendo', 'Microhard', 'Azeus', 'Sansong', 'Apull', 'Wowhey', 'Illogitech'];
@@ -33,7 +34,20 @@ const createProducts = () => {
 
 const insertMockData = function() {
   // Complete me please
+  let products = createProducts();
+  for (let i = 0; i < products.length; i++) {
+    dbHelpers.postProductsHelper(products[i], (err, results) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(results);
+      }
+    });
+  }
+
 };
+
+// insertMockData();
 
 // NOTE: DO NOT invoke this function as part of your
 // server code - it is meant to only be run once so that

@@ -1,4 +1,4 @@
-
+// jshint esversion:6
 
 /*
   ensure your schema has the following:
@@ -19,3 +19,4 @@
 // const Products = 
 
 // module.exports = Products;
+

@@ -6,11 +6,22 @@ const controller = require('./controller.js');
 router
   .route('/products')
   .get(controller.get)
-  .post(controller.post)
+  .post(controller.post);
 
 router
   .route('/products/:_id')
+  .get(controller.getOne)
   .put(controller.put)
-  .delete(controller.delete)
+  .delete(controller.delete);
+
+router
+  .route('/products/:name')
+  .get()
+// router
+//   .route('/name')
+//   .get()
+//   .post()
+//   .put()
+//   .delete();
 
 module.exports = router
